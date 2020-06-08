@@ -146,7 +146,7 @@ def download_img_via_multiprocessing(img_urls):
     :return: None
     """
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
+    with concurrent.futures.ProcessPoolExecutor() as executor:
         executor.map(download_img, img_urls)
 
 
